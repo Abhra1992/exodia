@@ -5,8 +5,20 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'devise'
+gem 'kaminari'
+gem 'execjs'
+gem 'kramdown'
 
+group :development do
+  gem 'sqlite3'
+  gem 'faker'
+  gem 'twitter-bootstrap-rails'
+end
+
+group :production do
+  # gem 'mysql2'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,6 +28,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+	# gem 'libv8', '~> 3.11.8'
 
   gem 'uglifier', '>= 1.0.3'
 end
