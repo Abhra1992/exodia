@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  event: 
+  active: false
+  level: 1
+  score: 1
+  team: 
+
+two:
+  user: 
+  event: 
+  active: false
+  level: 1
+  score: 1
+  team: 
