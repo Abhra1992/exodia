@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109085749) do
+ActiveRecord::Schema.define(:version => 20130109154917) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "phone"
@@ -60,6 +60,33 @@ ActiveRecord::Schema.define(:version => 20130109085749) do
 
   add_index "events", ["type_id"], :name => "index_events_on_type_id"
   add_index "events", ["venue_id"], :name => "index_events_on_venue_id"
+
+  create_table "participations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.boolean  "active",     :default => true
+    t.integer  "level",      :default => 0
+    t.integer  "score",      :default => 0
+    t.integer  "team_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "participations", ["event_id"], :name => "index_participations_on_event_id"
+  add_index "participations", ["team_id"], :name => "index_participations_on_team_id"
+  add_index "participations", ["user_id"], :name => "index_participations_on_user_id"
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.integer  "event_id"
+    t.integer  "creator_id"
+    t.integer  "size",       :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "teams", ["creator_id"], :name => "index_teams_on_creator_id"
+  add_index "teams", ["event_id"], :name => "index_teams_on_event_id"
 
   create_table "users", :force => true do |t|
     t.integer  "phone"
