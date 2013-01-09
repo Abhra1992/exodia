@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  description: MyText
+  rules: MyText
+  judging: MyText
+  start: 2013-01-09 14:27:49
+  end: 2013-01-09 14:27:49
+  submit_to: MyString
+  team: false
+  rounds: 1
+  venue: 
+  type: 
+
+two:
+  name: MyString
+  code: MyString
+  description: MyText
+  rules: MyText
+  judging: MyText
+  start: 2013-01-09 14:27:49
+  end: 2013-01-09 14:27:49
+  submit_to: MyString
+  team: false
+  rounds: 1
+  venue: 
+  type: 
