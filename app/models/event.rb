@@ -7,4 +7,7 @@ class Event < ActiveRecord::Base
 	has_many :participants, :class_name => 'User', :through => :participations, :source => :user
 	
   attr_accessible :code, :description, :end, :judging, :name, :rounds, :rules, :start, :submit_to, :team
+  
+  validates :name, :code, :presence => true, :uniqueness => true
+	validates :description, :start, :end, :submit_to, :presence => true
 end
