@@ -1,4 +1,15 @@
 Exodia::Application.routes.draw do
+  get "pages/contacts"
+  get "pages/credits"
+  get "pages/hospitality"
+  get "pages/how_to_reach"
+  get "pages/index"
+  get "pages/license"
+  get "pages/privacy"
+  get "pages/schedule"
+  get "pages/sitemap"
+  get "pages/sponsors"
+  
   get "home/index"
   get "home/notifications"
 
