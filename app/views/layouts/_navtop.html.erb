@@ -1,0 +1,74 @@
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<% 3.times do %>
+					<span class="icon-bar"></span>
+				<% end %>
+			</button>
+			
+			<!-- Be sure to leave the brand out there if you want it shown -->
+		  <%= link_to "Exodia 2013, IIT Mandi", root_path, :class => 'brand' %>
+		  
+		  <!-- Everything you want hidden at 940px or less, place within here -->
+			<div class="nav-collapse collapse">
+			  <ul class="nav">
+					<li class="<%= 'active' if params[:controller] == 'home' %>">
+						<%= link_to "Home", root_path %>
+					</li>
+					<li class="<%= 'active' if params[:controller] == 'contests' %>">
+						<%= link_to "Contests", contests_path %>
+					</li>
+					<li class="<%= 'active' if params[:controller] == 'insights' %>">
+						<%= link_to "Special Attractions", insights_path %>
+					</li>
+					<li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extras <b class="caret"></b></a>
+					  <ul class="dropdown-menu">
+					    <li><%= link_to "Gallery", "#" %></li>
+					    <li><%= link_to "Archive - 2012", "#" %></li>
+					  </ul>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'schedule' %>">
+						<%= link_to "Schedule", pages_schedule_path %>
+					</li>
+				</ul>
+				
+				<ul class="nav pull-right">
+					<li class="">
+						<div class="btn-group pull-right">
+							<% if user_signed_in? %>
+								<button class="btn"><%= current_user.username %></button>
+								<button class="btn dropdown-toggle" data-toggle="dropdown">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li class="nav-header">current_user.teams</li>
+									<li><a href="#">Team 1</a></li>
+									<li><a href="#">Team 2</a></li>
+									<li class="divider"></li>
+									<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+								</ul>
+							<% else %>
+								<button class="btn">My Exodia</button>
+								<button class="btn dropdown-toggle" data-toggle="dropdown">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><%= link_to "Sign In", new_user_session_path %></li>
+									<li class="divider"></li>
+									<li><%= link_to "Sign Up", new_user_registration_path %></li>
+								</ul>
+							<% end %>
+						</div><!-- /btn-group -->
+					</li>
+				</ul>
+			</div>
+    </div>
+  </div>
+</div>
+
+<div class="clear">.</div>

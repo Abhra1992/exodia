@@ -1,0 +1,52 @@
+<div class="clear">.</div>
+
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<!-- Be sure to leave the brand out there if you want it shown -->
+			<%= link_to (raw "&copy;2013 Publicity &amp; Design"), pages_credits_path, :class => 'brand' %>
+			
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li class="<%= 'active' if params[:action] == 'contacts' %>">
+						<%= link_to "Contact Us", pages_contacts_path %>
+					</li>					
+					<li class="<%= 'active' if params[:action] == 'how_to_reach' %>">
+						<%= link_to "How To Reach", pages_how_to_reach_path %>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'hospitality' %>">
+						<%= link_to "Hospitality", pages_hospitality_path %>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'sponsors' %>">
+						<%= link_to "Sponsors", pages_sponsors_path %>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'sitemap' %>">
+						<%= link_to "Sitemap", pages_sitemap_path %>
+					</li>
+				</ul>
+				
+				<ul class="nav pull-right">
+					<li class="<%= 'active' if params[:action] == 'credits' %>">
+						<%= link_to "Credits", pages_credits_path %>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'privacy' %>">
+						<%= link_to "Privacy Policy", pages_privacy_path %>
+					</li>
+					<li class="<%= 'active' if params[:action] == 'license' %>">
+						<%= link_to "License", pages_license_path %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
