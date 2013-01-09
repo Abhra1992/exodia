@@ -1,4 +1,4 @@
-== Welcome to Exodia
+## Welcome to Exodia
 
 1. For the source code of the Exodia official website, please browse above.
 2. For help regarding use of the website, visit the Contacts page.
