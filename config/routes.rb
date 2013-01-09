@@ -1,4 +1,7 @@
 Exodia::Application.routes.draw do
+  get "home/index"
+  get "home/notifications"
+
   devise_for :contacts
   devise_for :users
 
