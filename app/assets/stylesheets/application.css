@@ -12,8 +12,8 @@
  *= require_self
 */
 body{
-  background-color: lightgreen;
-  background-image: url('backgrounds/andromeda.jpg');
+  background-color: white;
+  /* background-image: url('backgrounds/andromeda.jpg'); */
 }
 a:hover{
 	text-decoration: none;

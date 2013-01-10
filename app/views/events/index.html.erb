@@ -1,3 +1,19 @@
-<%= @events.each do |e| %>
-  <p><%= e.name %></p>
-<% end %>
+<div id="all_events" class="row-fluid">
+  <table class="table table-bordered table-striped table-condensed">
+    <caption>All Events</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |e| %>
+      <tr>
+        <td><%= link_to e.name, e %></td>
+        <td><%= e.start %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
