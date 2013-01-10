@@ -13,7 +13,7 @@
 */
 body{
   background-color: white;
-  /* background-image: url('backgrounds/andromeda.jpg'); */
+  background-image: url('background.jpg');
 }
 a:hover{
 	text-decoration: none;
