@@ -1,2 +1,52 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h2>Create New Event</h2>
+<div id="new_event_form" class="row-fluid">
+  <%= form_for :event, :url => events_path, :method => :post do |f| %>
+    <%= f.label :type_id %>
+    <%= f.select :type_id, @types %>
+    
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    
+    <%= f.label :rules %>
+    <%= f.text_area :rules %>
+    
+    <%= f.label :judging %>
+    <%= f.text_area :judging %>
+    
+    <%= f.label :start %>
+    <%= f.text_field :start %>
+    
+    <%= f.label :end %>
+    <%= f.text_field :end %>
+    
+    <%= f.label :submit_to %>
+    <%= f.email_field :submit_to %>
+    
+    <%= f.label :rounds %>
+    <%= f.text_field :rounds %>    
+    
+    <%= f.label :team %>
+    <%= f.check_box :team %>
+    
+    <%= f.label :venue_id %>
+    <%= f.select :venue_id, @venues %>
+    
+    <%= f.label :start %>
+    <%= select_date Date.civil(2013, 3, 1), :prefix => :start_date %>
+    <%= select_time Time.now, :prefix => :start_time %>
+    
+    <%= f.label :end %>
+    <%= date_select :event, :start %>
+    <%= select_time Time.now, :prefix => :start_time %>
+    
+    <div>
+      <%= f.submit "Create", :class => 'btn' %>
+    </div>
+  <% end %>
+</div>
