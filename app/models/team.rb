@@ -3,6 +3,6 @@ class Team < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User'
   
   has_many :participations
-  has_many :members, :class_name => 'User', :through => :participations
+  has_many :members, :class_name => 'User', :through => :participations, :source => :user
   attr_accessible :name, :size
 end

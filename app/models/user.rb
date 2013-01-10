@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 	has_many :events, :through => :participations
 	has_many :teams, :through => :participations
 	
-	has_many :created_teams, :class_name => 'Team'
+	has_many :created_teams, :class_name => 'Team', :foreign_key => :creator_id
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
