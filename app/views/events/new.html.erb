@@ -19,17 +19,11 @@
     <%= f.label :judging %>
     <%= f.text_area :judging %>
     
-    <%= f.label :start %>
-    <%= f.text_field :start %>
-    
-    <%= f.label :end %>
-    <%= f.text_field :end %>
-    
     <%= f.label :submit_to %>
     <%= f.email_field :submit_to %>
     
     <%= f.label :rounds %>
-    <%= f.text_field :rounds %>    
+    <%= f.text_field :rounds %>  
     
     <%= f.label :team %>
     <%= f.check_box :team %>
@@ -38,12 +32,10 @@
     <%= f.select :venue_id, @venues %>
     
     <%= f.label :start %>
-    <%= select_date Date.civil(2013, 3, 1), :prefix => :start_date %>
-    <%= select_time Time.now, :prefix => :start_time %>
+    <%= datetime_select :event, :start, :default => DateTime.civil(2013, 3, 1, 1, 0) %>
     
     <%= f.label :end %>
-    <%= date_select :event, :start %>
-    <%= select_time Time.now, :prefix => :start_time %>
+    <%= datetime_select :event, :end, :default => DateTime.civil(2013, 3, 2, 1, 0) %>
     
     <div>
       <%= f.submit "Create", :class => 'btn' %>

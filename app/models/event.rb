@@ -12,4 +12,8 @@ class Event < ActiveRecord::Base
   
   validates :name, :code, :presence => true, :uniqueness => true
 	validates :description, :start, :end, :submit_to, :presence => true
+	
+	def Description
+	  Kramdown::Document.new(description).to_html
+	end
 end

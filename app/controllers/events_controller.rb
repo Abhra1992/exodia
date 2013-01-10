@@ -23,11 +23,12 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       flash[:error] = "There was an error saving the event"
-      redirect_to new_events_path
+      redirect_to new_event_path
     end
   end
 
   def edit
+    venues_and_types
     @event = Event.find(params[:id])
   end
   
