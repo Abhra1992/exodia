@@ -62,10 +62,8 @@ ActiveRecord::Schema.define(:version => 20130109160856) do
   add_index "events", ["venue_id"], :name => "index_events_on_venue_id"
 
   create_table "events_contacts", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "contact_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer "event_id"
+    t.integer "contact_id"
   end
 
   add_index "events_contacts", ["contact_id"], :name => "index_events_contacts_on_contact_id"
