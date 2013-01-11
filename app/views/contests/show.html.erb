@@ -44,7 +44,7 @@
 					<% if @participation.nil? %>
 						No notifications to display.
 					<% else %>
-						<%= current_user.notifications.to_s %>
+						<%= current_user.notifications.to_s rescue '' %>
 					<% end %>
 				</p>
 			</div>
