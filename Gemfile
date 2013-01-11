@@ -17,7 +17,7 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2'
+  # gem 'mysql2'
   gem 'therubyracer', :platforms => :ruby
   gem 'libv8', '~> 3.11.8'
 end
