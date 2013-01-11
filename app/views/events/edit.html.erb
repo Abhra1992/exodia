@@ -1,2 +1,46 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<div class="row-fluid">
+  <div id="edit_event_form" class="well overlay">
+    <h2>Edit Event</h2>
+    <%= form_for @event, :url => event_path, :method => :put do |f| %>
+      <%= f.label :type_id %>
+      <%= f.select :type_id, @types %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :code %>
+      <%= f.text_field :code %>
+      
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+      
+      <%= f.label :rules %>
+      <%= f.text_area :rules %>
+      
+      <%= f.label :judging %>
+      <%= f.text_area :judging %>
+      
+      <%= f.label :submit_to %>
+      <%= f.email_field :submit_to %>
+      
+      <%= f.label :rounds %>
+      <%= f.text_field :rounds %>  
+      
+      <%= f.label :team %>
+      <%= f.check_box :team %>
+      
+      <%= f.label :venue_id %>
+      <%= f.select :venue_id, @venues %>
+      
+      <%= f.label :start %>
+      <%= datetime_select :event, :start, :default => DateTime.civil(2013, 3, 1, 1, 0) %>
+      
+      <%= f.label :end %>
+      <%= datetime_select :event, :end, :default => DateTime.civil(2013, 3, 2, 1, 0) %>
+      
+      <div>
+        <%= f.submit "Save and Close", :class => 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
