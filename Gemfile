@@ -7,7 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'devise'
 gem 'kaminari'
-gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'kramdown'
 
 group :development do
@@ -18,8 +18,6 @@ end
 
 group :production do
   # gem 'mysql2'
-  gem 'therubyracer', :platforms => :ruby
-  gem 'libv8', '~> 3.11.8'
 end
 
 # Gems used only for assets and not required

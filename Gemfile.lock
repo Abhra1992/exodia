@@ -130,12 +130,10 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
-  execjs
   faker
   jquery-rails
   kaminari
   kramdown
-  libv8 (~> 3.11.8)
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   sqlite3
