@@ -1,3 +1,11 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div#exodia_carousel{
+	max-height: 400px;
+	background-color: lightgray;
+}
+div#exodia_carousel img{
+	max-height: 400px;
+	width: 100%;
+}

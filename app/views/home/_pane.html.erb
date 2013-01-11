@@ -1,0 +1,34 @@
+<div class="row-fluid">
+	<div class="tabbable tabs-left span10 offset1 well overlay"> <!-- Only required for left/right tabs -->
+		<ul class="nav nav-tabs nav-stacked">
+			<li class="active"><%= link_to 'Welcome', '#welcome', 'data-toggle' => 'tab' %></li>
+			<li><%= link_to 'About IIT Mandi', '#about_iit_mandi', 'data-toggle' => 'tab' %></li>
+			<% if user_signed_in? %>
+			<li><%= link_to 'Profile', '#profile', 'data-toggle' => 'tab' %></li>
+			<li><%= link_to 'Notifications', '#notifications', 'data-toggle' => 'tab' %></li>
+			<% end %>			
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="welcome">
+				<p>Welcome To Exodia.</p>
+			</div>
+			<div class="tab-pane" id="about_iit_mandi">
+				<p>About IIT Mandi</p>
+			</div>
+			<% if user_signed_in? %>
+			<div class="tab-pane" id="profile">
+				<p>Your Profile.</p>
+			</div>
+			<div class="tab-pane" id="notifications">
+				<p>
+					<% if @notifications.empty? %>
+						No notifications to display.
+					<% else %>
+						<%= @notifications.to_yaml %>
+					<% end %>
+				<p>
+			</div>
+			<% end %>			
+		</div>
+	</div>
+</div>

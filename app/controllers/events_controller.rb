@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_contact!
+  
   def venues_and_types
     @venues = Venue.all.map { |v| [v.name, v.id] }
     @types = EventType.all.map { |t| [t.name, t.id] }
