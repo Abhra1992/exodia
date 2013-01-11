@@ -16,4 +16,36 @@ class Event < ActiveRecord::Base
 	def Description
 	  Kramdown::Document.new(description).to_html
 	end
+	
+	def Rules
+	  Kramdown::Document.new(rules).to_html
+	end
+	
+	def Type
+	  type.name
+	end
+	
+	def self.by_type
+		events = {}
+		EventType.all.each do |t|
+			events[t.name] = t.events
+		end
+		events
+	end
+	
+	def self.contests
+	  contests = {}
+	  EventType.contest.each do |t|
+			contests[t.name] = t.events
+		end
+		contests
+	end
+	
+	def self.insights
+	  insights = {}
+	  EventType.insight.each do |t|
+			insights[t.name] = t.events
+		end
+		insights
+	end
 end

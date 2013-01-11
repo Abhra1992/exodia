@@ -26,10 +26,13 @@ Exodia::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match 'contest/:code' => 'contests#show', :as => :contest
+	match 'insight/:code' => 'insights#show', :as => :insight
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :events
+  resources :insights, :only => [:index, :show]
 
   # Sample resource route with options:
   #   resources :products do
@@ -48,7 +51,9 @@ Exodia::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :contests, :insights, :only => [:index, :show]
+  resources :contests, :only => [:index, :show] do
+    resource :participation, :only => [:create, :destroy], :as => :register
+  end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
