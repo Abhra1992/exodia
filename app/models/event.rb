@@ -13,16 +13,14 @@ class Event < ActiveRecord::Base
   validates :name, :code, :presence => true, :uniqueness => true
 	validates :description, :start, :end, :submit_to, :presence => true
 	
-	def Description
-	  Kramdown::Document.new(description).to_html
-	end
-	
-	def Rules
-	  Kramdown::Document.new(rules).to_html
-	end
-	
 	def Type
 	  type.name
+	end
+	
+	def Contacts
+	  contacts.map do |c|
+	    [c.name, c.phone, c.email]
+	  end
 	end
 	
 	def self.by_type

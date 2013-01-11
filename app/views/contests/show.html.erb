@@ -21,13 +21,13 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="tab1">
 				<p><%= @event.name %><br/>
-					<%= raw @event.Description %>
+					<%= description %>
 				</p>
 			</div>
 			
 			<div class="tab-pane" id="tab2">
 				<p>Rules of Participation and Procedure<br/>
-					<%= raw @event.Rules %>
+					<%= rules %>
 				</p>
 			</div>
 			
@@ -51,7 +51,7 @@
 			
 			<div class="tab-pane" id="tab5">
 				<p>Contact, Phone, Email<br/>
-					Contact: @event.contacts.to_yaml <br/>
+					Contact: <%= @event.Contacts rescue '' %> <br/>
 					Submit your entries to: <%= @event.submit_to %>
 				</p>
 			</div>

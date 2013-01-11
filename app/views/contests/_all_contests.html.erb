@@ -6,7 +6,7 @@
 				<div class="span2 outline">
 					<%= type %><br/>
 					<% contests.each do |c| %>
-						<%= link_to c.name, contest_path(c.code), :class => ('participating' if @participating.include? c) %><br/>
+						<%= link_to c.name.truncate(13), contest_path(c.code), :class => ('participating' if @participating.include? c) %><br/>
 					<% end %>
 				</div>
 				<% end %>
