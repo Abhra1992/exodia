@@ -44,7 +44,7 @@
 					<% if @participation.nil? %>
 						No notifications to display.
 					<% else %>
-						<%= current_user.notifications.to_s %>
+						<%= current_user.notifications.to_s rescue '' %>
 					<% end %>
 				</p>
 			</div>
@@ -60,14 +60,14 @@
 				<p>
 					<% if @participation.nil? %>
 					  Participate in <%= @event.name %><br/>
-					  <%= link_to 'Participate', root_path, :method => :post, :class => 'btn btn-primary' %>
+					  <%= link_to 'Participate', contest_register_path(@event), :method => :post, :class => 'btn btn-primary' %>
 					<% else %>
 					  Your Participation Details:<br/>
 					  Registered on: <%= @participation.created_at.to_date %><br/>
 					  Current Level: <%= @participation.level %><br/>
 					  Current Score: <%= @participation.score %><br/>					  
   			    <%= @participation.to_yaml %><br/>
-						<%= link_to 'Leave', root_path, :method => :delete, :class => 'btn btn-danger', :confirm => 'Your Registration for this event will be destroyed permanently along with any progress you made. Are You Sure?' %>
+						<%= link_to 'Leave', contest_register_path(@event), :method => :delete, :class => 'btn btn-danger', :confirm => 'Your Registration for this event will be destroyed permanently along with any progress you made. Are You Sure?' %>
 						<%= link_to 'Join a Team', root_path, :method => :delete, :class => 'btn btn-action' %>
 					<% end %>
 				</p>
