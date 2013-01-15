@@ -22,6 +22,8 @@ class PagesController < ApplicationController
   end
 
   def schedule
+    @contests = Event.contests_list
+    @insights = Event.insights_list
   end
 
   def sitemap

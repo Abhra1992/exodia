@@ -1,2 +1,31 @@
-<h1>Pages#schedule</h1>
-<p>Find me in app/views/pages/schedule.html.erb</p>
+<div class="row-fluid">
+	<table id="schedule_table" class="table table-striped table-hover table-bordered table-condensed">
+		<caption>Event Schedule @ Exodia 2013</caption>
+		<thead>
+			<tr>
+				<th>Event Name</th>
+				<th>Event Type</th>
+				<th>Starts At</th>
+				<th>Ends At</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @contests.each do |e| %>
+				<tr>
+					<td><%= link_to e.name, contest_path(e.code) %></td>
+					<td><%= e.Type %></td>
+					<td><%= e.start %></td>
+					<td><%= e.end %></td>
+				</tr>
+			<% end %>
+			<% @insights.each do |e| %>
+				<tr>
+					<td><%= link_to e.name, insight_path(e.code) %></td>
+					<td><%= e.Type %></td>
+					<td><%= e.start %></td>
+					<td><%= e.end %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

@@ -1,6 +1,10 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-table#contacts_table{
+table#contacts_table, table#schedule_table{
   background: whitesmoke;
+  caption{
+    color: white;
+    background: black;
+  }
 }

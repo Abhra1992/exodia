@@ -39,11 +39,19 @@ class Event < ActiveRecord::Base
 		contests
 	end
 	
+	def self.contests_list
+	  EventType.contest.map(&:events).inject(:+)
+	end
+	
 	def self.insights
 	  insights = {}
 	  EventType.insight.each do |t|
 			insights[t.name] = t.events
 		end
 		insights
+	end
+	
+	def self.insights_list
+	  EventType.insight.map(&:events).inject(:+)
 	end
 end
