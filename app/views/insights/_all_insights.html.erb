@@ -1,0 +1,19 @@
+<div class="row-fluid">
+	<div id="all_insights" class="span7 offset1 well overlay">
+		<div class="row-fluid">
+			<% @insights.each_pair do |type, insights| %>
+			  <% if not insights.empty? %>
+				<div class="span3 outline">
+					<%= type.pluralize %><br/>
+					<% insights.each do |i| %>
+						<%= link_to i.name, insight_path(i.code) %><br/>
+					<% end %>
+				</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="span3">
+		<%= image_tag "posters/8.jpg", :alt => "Event Poster" %>
+	</div>
+</div>

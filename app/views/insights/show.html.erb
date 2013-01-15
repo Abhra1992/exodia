@@ -1,0 +1,53 @@
+<%= render 'all_insights' %>
+<div class="clear">.</div>
+
+<div class="row-fluid">
+  <div class="tabbable tabs-left span10 offset1 well overlay"> <!-- Only required for left/right tabs -->
+		<ul class="nav nav-tabs nav-stacked">
+			<li class="active"><a href="#tab1" data-toggle="tab"><%= @event.name %></a></li>
+			<li><a href="#tab2" data-toggle="tab">Rules</a></li>
+			<li><a href="#tab3" data-toggle="tab">Timings and Venue</a></li>
+			<li><a href="#tab4" data-toggle="tab">Notifications</a></li>
+			<li><a href="#tab5" data-toggle="tab">Contact</a></li>
+		</ul>
+		
+		<div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+				<p><%= @event.name %><br/>
+					<%= description %>
+				</p>
+			</div>
+			
+			<div class="tab-pane" id="tab2">
+				<p>Rules of Participation and Procedure<br/>
+					<%= rules %>
+				</p>
+			</div>
+			
+			<div class="tab-pane" id="tab3">
+				<p>Time and Venue<br/>
+					Start Time: <%= @event.start %><br/>
+					End Time: <%= @event.end %><br/>
+					Venue: <%= @event.venue.name %><br/>
+				</p>
+			</div>
+			
+			<div class="tab-pane" id="tab4">
+				<p>Notifications<br/>
+					<% if @participation.nil? %>
+						No notifications to display.
+					<% else %>
+						<%= current_user.notifications.to_s rescue '' %>
+					<% end %>
+				</p>
+			</div>
+			
+			<div class="tab-pane" id="tab5">
+				<p>Contact, Phone, Email<br/>
+					Contact: <%= @event.Contacts %> <br/>
+					Submit your entries to: <%= @event.submit_to %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

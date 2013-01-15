@@ -26,8 +26,8 @@ Exodia::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-  match 'contest/:code' => 'contests#show', :as => :contest
-	match 'insight/:code' => 'insights#show', :as => :insight
+  match 'contest/:code' => 'contests#show', :constraints => { :code => /[a-z]+/ }, :as => :contest
+	match 'insight/:code' => 'insights#show', :constraints => { :code => /[a-z]+/ }, :as => :insight
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
