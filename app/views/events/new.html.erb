@@ -1,6 +1,9 @@
 <div class="row-fluid">
   <div id="new_event_form" class="well overlay">
     <h2>Create New Event</h2>
+    
+    <%= render 'markdown' %>
+    
     <%= form_for :event, :url => events_path, :method => :post do |f| %>
       <%= f.label :type_id %>
       <%= f.select :type_id, @types %>
