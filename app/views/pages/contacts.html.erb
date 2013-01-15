@@ -1,2 +1,23 @@
-<h1>Pages#contacts</h1>
-<p>Find me in app/views/pages/contacts.html.erb</p>
+<div class="row-fluid">
+	<table id="contacts_table" class="table table-striped table-hover table-bordered table-condensed">
+		<caption>Contact Us @ Exodia 2013</caption>
+		<thead>
+			<tr>
+				<th>Position</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @contacts.each do |c| %>
+				<tr>
+					<td><%= c.position %></td>
+					<td><%= c.name %></td>
+					<td><%= c.phone %></td>
+					<td><%= c.email %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
