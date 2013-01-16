@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to exodia.in, <%= @user.username %></h1>
+    <p>
+      You have successfully participated in <%= @event.name %>.<br/>
+    </p>
+    <p>
+      To visit the event page, click <%= link_to 'here', contest_path(@event.code) %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

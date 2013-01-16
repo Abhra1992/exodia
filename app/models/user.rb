@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :send_mail
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -15,7 +16,16 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :birthdate, :firstname, :lastname, :phone, :school, :username
   
+  validates :phone, :numericality => {:only_integer => true}
+	validates :username, :email, :presence => true, :uniqueness => true
+	validates :birthdate, :school, :firstname, :lastname, :presence => true
+  
   def name
     "%s %s" % [firstname, lastname]
+  end
+  
+  private
+  def send_mail
+    ExodiaMailer.register_email(self).deliver
   end
 end

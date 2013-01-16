@@ -9,7 +9,10 @@ class Contact < ActiveRecord::Base
   
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :firstname, :lastname, :phone, :position
+  attr_accessible :firstname, :lastname, :phone, :position  
+  
+	validates :email, :presence => true, :uniqueness => true
+	validates :firstname, :lastname, :presence => true
   
   def name
     "%s %s" % [firstname, lastname]
