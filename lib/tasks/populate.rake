@@ -60,7 +60,7 @@ namespace :db do
 				  e.end = DateTime.new + 1
 				  e.venue_id = 1 + (Random.srand % Venue.count)
 				  e.type = t
-				  e.team = true
+				  e.team_size = 1 + (Random.srand % 4)
 				  e.rounds = 1 + (Random.srand % 3)
 				  e.save
 				end

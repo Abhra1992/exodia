@@ -6,12 +6,17 @@ class Event < ActiveRecord::Base
 	has_many :participations
 	has_many :participants, :class_name => 'User', :through => :participations, :source => :user
 	
-  attr_accessible :code, :description, :end, :judging, :name, :rounds, :rules, :start, :submit_to, :team
+  attr_accessible :code, :description, :end, :judging, :name, :rounds, :rules, :start, :submit_to, :team_size
   # Allow contacts to create event with type and venue
   attr_accessible :type_id, :venue_id
   
   validates :name, :code, :presence => true, :uniqueness => true
 	validates :description, :start, :end, :submit_to, :presence => true
+	validates :rounds, :team_size, :numericality => {:only_integer => true}
+	
+	def team_event?
+	  team_size > 1
+	end
 	
 	def Type
 	  type.name
