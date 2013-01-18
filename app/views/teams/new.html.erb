@@ -1,0 +1,14 @@
+<div class="row-fluid">
+  <div id="new_team_form" class="well overlay">
+    <h2>Create New Team</h2>
+    
+    <%= form_for :team, :url => contest_team_path(@contest_id), :method => :post do |f| %>
+      <%= f.label :name, "Team Name" %>
+      <%= f.text_field :name %>
+      
+      <div>
+        <%= f.submit "Create", :class => 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

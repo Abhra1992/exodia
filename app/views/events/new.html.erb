@@ -8,37 +8,37 @@
       <%= f.label :type_id %>
       <%= f.select :type_id, @types %>
       
-      <%= f.label :name %>
+      <%= f.label :name, "Event Name" %>
       <%= f.text_field :name %>
       
-      <%= f.label :code %>
+      <%= f.label :code, "Event URL Code" %>
       <%= f.text_field :code %>
       
-      <%= f.label :description %>
+      <%= f.label :description, "Description (Supports Markdown)" %>
       <%= f.text_area :description %>
       
-      <%= f.label :rules %>
+      <%= f.label :rules, "Rules (Supports Markdown)" %>
       <%= f.text_area :rules %>
       
-      <%= f.label :judging %>
+      <%= f.label :judging, "Judging (Supports Markdown)" %>
       <%= f.text_area :judging %>
       
-      <%= f.label :submit_to %>
+      <%= f.label :submit_to, "Submission Email" %>
       <%= f.email_field :submit_to %>
       
       <%= f.label :rounds %>
       <%= f.text_field :rounds %>  
       
-      <%= f.label :team %>
+      <%= f.label :team, "Team Event?" %>
       <%= f.check_box :team %>
       
       <%= f.label :venue_id %>
       <%= f.select :venue_id, @venues %>
       
-      <%= f.label :start %>
+      <%= f.label :start, "Event Starts At" %>
       <%= datetime_select :event, :start, :default => DateTime.civil(2013, 3, 1, 1, 0) %>
       
-      <%= f.label :end %>
+      <%= f.label :end, "Event Ends At" %>
       <%= datetime_select :event, :end, :default => DateTime.civil(2013, 3, 2, 1, 0) %>
       
       <div>

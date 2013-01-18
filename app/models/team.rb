@@ -5,4 +5,8 @@ class Team < ActiveRecord::Base
   has_many :participations
   has_many :members, :class_name => 'User', :through => :participations, :source => :user
   attr_accessible :name, :size
+  
+  def Members
+    members + [creator]
+  end
 end
