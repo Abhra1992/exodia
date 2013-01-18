@@ -15,15 +15,11 @@ class TeamsController < ApplicationController
 	end
   
   def create
-    Team.new do |t|
-      t.name = params[:team][:name]
-      t.creator = current_user
-      t.event = Event.find(params[:contest_id])
-      if t.save
-        flash[:success] = "Successfully created team."        
-      else
-        flash[:error] = "Creation failed. Please try again."
-      end
+    @team = current_user.created_teams.new(:event_id => params[:contest_id], :name => params[:team][:name])
+    if @team.save
+      flash[:success] = "Successfully created team."     
+    else
+      flash[:error] = "Creation failed. Please try again."
     end
     redirect_to :back
   end
