@@ -16,19 +16,20 @@ class TeamsController < ApplicationController
   
   def create
     Team.new do |t|
-      t.name = ''
+      t.name = params[:team][:name]
       t.creator = current_user
       t.event = Event.find(params[:contest_id])
       if t.save
-        
+        flash[:success] = "Successfully created team."        
       else
-      
+        flash[:error] = "Creation failed. Please try again."
       end
     end
+    redirect_to :back
   end
   
   def edit
-  
+    @team = current_user.created_teams.find_by_event_id(params[:contest_id])
   end
   
   def update

@@ -1,0 +1,16 @@
+<div class="row-fluid">
+  <div id="edit_team_form" class="well overlay">
+    <h2>Edit Team</h2>
+    
+    <%= form_for :team, :url => edit_contest_team_path(@team.event_id), :method => :put do |f| %>
+      <%= f.label :name, "Team Name" %>
+      <%= f.text_field :name %>
+      
+      <%= f.label :members, "Usernames to Invite" %>
+      <%= f.text_field :members %>
+      <div>
+        <%= f.submit "Save", :class => 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
