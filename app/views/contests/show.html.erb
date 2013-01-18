@@ -62,13 +62,26 @@
 					  Participate in <%= @event.name %><br/>
 					  <%= link_to 'Participate', contest_register_path(@event), :method => :post, :class => 'btn btn-primary' %>
 					<% else %>
-					  Your Participation Details:<br/>
-					  Registered on: <%= @participation.created_at.to_date %><br/>
-					  Current Level: <%= @participation.level %><br/>
-					  Current Score: <%= @participation.score %><br/>
-						<%= link_to 'Leave', contest_register_path(@event), :method => :delete, :class => 'btn btn-danger', :confirm => 'Your Registration for this event will be destroyed permanently along with any progress you made. Are You Sure?' %>
-						<%= link_to 'Join a Team', root_path, :method => :delete, :class => 'btn btn-action' %>
-					<% end %>
+					  <div class="row-fluid">
+					    <div class="span6">
+					      Your Participation Details:<br/>
+					      Registered on: <%= @participation.created_at.to_date %><br/>
+					      Current Level: <%= @participation.level %><br/>
+					      Current Score: <%= @participation.score %><br/>
+						    <%= link_to 'Leave', contest_register_path(@event), :method => :delete, :class => 'btn btn-danger', :confirm => 'Your Registration for this event will be destroyed permanently along with any progress you made. Are You Sure?' %>
+					    </div>
+					    <div class="span6">
+					      <% if @created_team.nil? %>
+					        This is a team event.<br/>
+						      <%= link_to 'Create a Team', new_contest_team_path(@event), :class => 'btn btn-action' %>
+					      <% else %>
+					        You have created a team.<br/>
+						      <%= link_to 'Add Teammates', edit_contest_team_path(@event), :class => 'btn btn-action' %>
+						      <%= link_to 'Destroy Team', contest_team_path(@event), :method => :delete, :class => 'btn btn-danger' %>
+					      <% end %>
+						  </div>
+					  </div>
+					<% end %>					
 				</p>
 			</div>
 		</div>

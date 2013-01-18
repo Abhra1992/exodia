@@ -53,6 +53,9 @@ Exodia::Application.routes.draw do
   #   end
   resources :contests, :only => [:index, :show] do
     resource :participation, :only => [:create, :destroy], :as => :register
+    resource :team do
+      post 'join', :on => :member
+    end
   end
 
   # Sample resource route with more complex sub-resources

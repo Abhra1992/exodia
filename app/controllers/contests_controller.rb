@@ -15,6 +15,9 @@ class ContestsController < ApplicationController
 		else
 			@event = Event.find(params[:id])
 		end
-		@participation = current_user.participations.find_by_event_id(@event.id) if user_signed_in?
+		if user_signed_in?
+  		@participation = current_user.participations.find_by_event_id(@event.id)
+	  	@created_team = current_user.created_teams.find_by_event_id(@event.id)
+		end
   end
 end

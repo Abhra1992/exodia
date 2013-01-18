@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     "%s %s" % [firstname, lastname]
   end
   
+  def Teams
+    teams + created_teams
+  end
+  
   private
   def send_mail
     ExodiaMailer.register_email(self).deliver
