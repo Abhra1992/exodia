@@ -65,8 +65,7 @@
 					  Your Participation Details:<br/>
 					  Registered on: <%= @participation.created_at.to_date %><br/>
 					  Current Level: <%= @participation.level %><br/>
-					  Current Score: <%= @participation.score %><br/>					  
-  			    <%= @participation.to_yaml %><br/>
+					  Current Score: <%= @participation.score %><br/>
 						<%= link_to 'Leave', contest_register_path(@event), :method => :delete, :class => 'btn btn-danger', :confirm => 'Your Registration for this event will be destroyed permanently along with any progress you made. Are You Sure?' %>
 						<%= link_to 'Join a Team', root_path, :method => :delete, :class => 'btn btn-action' %>
 					<% end %>

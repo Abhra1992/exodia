@@ -55,9 +55,6 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.6)
-    kaminari (0.14.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     kramdown (0.14.1)
     libv8 (3.11.8.13)
     mail (2.4.4)
@@ -66,6 +63,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
+    mysql2 (0.3.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.4)
@@ -132,8 +130,8 @@ DEPENDENCIES
   devise
   faker
   jquery-rails
-  kaminari
   kramdown
+  mysql2
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   sqlite3
