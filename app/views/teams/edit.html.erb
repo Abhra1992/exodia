@@ -7,7 +7,10 @@
       <%= f.text_field :name %>
       
       <%= f.label :members, "Usernames to Invite" %>
-      <%= f.text_field :members %>
+      <% @team.max_size.times do %>
+        <%= f.text_field :members %>
+      <% end %>
+      
       <div>
         <%= f.submit "Save", :class => 'btn' %>
       </div>
