@@ -4,7 +4,7 @@ class CreateTeams < ActiveRecord::Migration
       t.string :name
       t.references :event
       t.references :creator
-      t.integer :size, :default => 0
+      t.integer :size, :default => 1
 
       t.timestamps
     end

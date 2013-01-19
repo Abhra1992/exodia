@@ -1,0 +1,6 @@
+$('div#teammates').html('<%= escape_javascript
+  Teammates:<br/>
+  <% @team.members.each do |m| %>
+    <%= m.username %>&times;<br/>
+  <% end %>
+%>');

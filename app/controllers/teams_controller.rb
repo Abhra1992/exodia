@@ -21,7 +21,7 @@ class TeamsController < ApplicationController
     else
       flash[:error] = "Creation failed. Please try again."
     end
-    redirect_to :back
+    redirect_to edit_contest_team_path(params[:contest_id])
   end
   
   def edit
@@ -29,7 +29,8 @@ class TeamsController < ApplicationController
   end
   
   def update
-  
+    @team = current_user.created_teams.find_by_event_id(params[:contest_id])
+    @team.update_attributes(params[:team])
   end
   
   def destroy

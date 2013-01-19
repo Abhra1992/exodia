@@ -2,17 +2,25 @@
   <div id="edit_team_form" class="well overlay">
     <h2>Edit Team</h2>
     
-    <%= form_for :team, :url => edit_contest_team_path(@team.event_id), :method => :put do |f| %>
+    <%= form_for @team, :url => contest_team_path(@team.event_id), :method => :put, :remote => true do |f| %>
       <%= f.label :name, "Team Name" %>
       <%= f.text_field :name %>
       
-      <%= f.label :members, "Usernames to Add" %>
-      <% @team.max_size.times do %>
-        <%= f.text_field :members %>
-      <% end %>
+      <div id="teammates">
+        Teammates:<br/>
+        <% @team.members.each do |m| %>
+          <%= m.username %>&times;<br/>
+        <% end %>
+      </div>
+      
+      <p>
+      <%= label @team, :member %>
+      <%= text_field @team, :member %><br/>
+      <%= link_to "Add", contest_team_path(@team.event_id), :class => 'btn updatable', :remote => true %>
+      </p>
       
       <div>
-        <%= f.submit "Save", :class => 'btn' %>
+        <%= f.submit "Save Team", :class => 'btn' %>
       </div>
     <% end %>
   </div>
