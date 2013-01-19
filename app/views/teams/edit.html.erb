@@ -6,7 +6,7 @@
       <%= f.label :name, "Team Name" %>
       <%= f.text_field :name %>
       
-      <%= f.label :members, "Usernames to Invite" %>
+      <%= f.label :members, "Usernames to Add" %>
       <% @team.max_size.times do %>
         <%= f.text_field :members %>
       <% end %>

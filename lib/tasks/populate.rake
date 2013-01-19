@@ -32,7 +32,7 @@ namespace :db do
 			  u.email = Faker::Internet.safe_email(u.firstname)
 			  u.password = '15081992'
 			  u.username = Faker::Internet.user_name(u.firstname)
-			  u.save!
+			  u.save
 			end
 		end
 		
@@ -44,7 +44,7 @@ namespace :db do
 			  c.position = Faker::Name.title
 			  c.email = Faker::Internet.safe_email(c.firstname)
 			  c.password = '15081992'
-			  c.save!
+			  c.save
 			end
 		end
 		
