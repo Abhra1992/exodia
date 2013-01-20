@@ -30,6 +30,6 @@ class User < ActiveRecord::Base
   
   private
   def send_mail
-    ExodiaMailer.register_email(self).deliver
+    ExodiaMailer.register_email(self).deliver rescue nil
   end
 end

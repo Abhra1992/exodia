@@ -8,6 +8,6 @@ class Participation < ActiveRecord::Base
   
   private
   def send_mail
-    ExodiaMailer.participate_email(user, event).deliver
+    ExodiaMailer.participate_email(user, event).deliver rescue nil
   end
 end
