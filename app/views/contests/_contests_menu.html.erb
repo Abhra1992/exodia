@@ -1,0 +1,23 @@
+<div id="contests_expanding_menu" class="row-fluid">
+  <div id="ei_menu" class="ei_menu span8 offset2">
+	  <ul>
+	    <% @contests.each_with_index do |(type, contests), index| %>
+	    <li>
+	      <a href="#" class="pos<%= index + 1 %>">
+	        <span class="ei_preview"></span>
+				  <span class="ei_image"></span>
+	      </a>
+	      <div class="ei_descr">
+				  <h2><%= type %></h2>
+				  <h3><%= type %></h3>
+				  <p>
+				  <% contests.each do |c| %>
+						<%= link_to c.name, contest_path(c.code), :class => ('participating' if @participating.include? c) %><br/>
+					<% end %>
+				  </p>
+			  </div>
+	    </li>
+	    <% end %>
+	  </ul>
+  </div>
+</div>
