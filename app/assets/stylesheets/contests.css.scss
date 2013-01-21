@@ -6,29 +6,31 @@
   font-weight: bold;
 }
 /* Menu style */
+$menu_height: 280px;
+$item_width: 75px;
 .ei_menu{
   background: #111;
   width: 100%;
   overflow: hidden;
   ul{
-    height: 350px;
-    margin-left: 50px;
+    height: $menu_height;
+    /* margin-left: 50px; */
     position:relative;
     display:block;
-    width: 1300px;
+    width: 100%; /* was 1300px */
     li{
       float: left;
-      width: 75px;
-      height: 350px;
-      position:relative;
+      width: $item_width;
+      height: $menu_height;
+      position: relative;
       overflow: hidden;
       border-right: 2px solid #111;
     }
   }
 }
 .ei_preview{
-	width: 75px;
-	height: 350px;
+	width: $item_width;
+	height: $menu_height;
 	cursor: pointer;
 	position: absolute;
 	top: 0px;
@@ -37,63 +39,65 @@
 }
 .ei_image{
 	position: absolute;
-	left: 75px;
+	left: $item_width;
 	top: 0px;
-	width: 75px;
-	height: 350px;
+	width: $item_width;
+	height: $menu_height;
 	opacity: 0.2;
 	background: transparent url(events_menu/color.jpg) no-repeat top left;
 }
 .pos1 span{
-	background-position: 0px 0px;
+	background-position: (0 * $item_width) 0px;
 }
 .pos2 span{
-	background-position: -75px 0px;
+	background-position: (-1 * $item_width) 0px;
 }
 .pos3 span{
-	background-position: -152px 0px;
+	background-position: (-2 * $item_width) 0px;
 }
 .pos4 span{
-	background-position: -227px 0px;
+	background-position: (-3 * $item_width) 0px;
 }
 .pos5 span{
-	background-position: -302px 0px;
+	background-position: (-4 * $item_width) 0px;
 }
 .pos6 span{
-	background-position: -377px 0px;
+	background-position: (-5 * $item_width) 0px;
 }
 .ei_descr{
 	position: absolute;
-	width: 278px;
-	height: 310px;
+	width: 65%; /* was 278px */
+	height: ($menu_height - 40px);
 	border-right: 7px solid #f0f0f0;
 	padding: 20px;
-	left: 75px;
+	left: $item_width;
 	top: 0px;
-	background: #fff;
+	background: white;
 	h2{
 	  font-family: 'Rock Salt', arial, serif;
 	  font-size: 26px;
 	  color: #333;
 	  padding: 10px;
 	  text-shadow: 0px 0px 1px #fff;
-	  background: #fff url(events_menu/stripe_light.gif) repeat top left;
+	  background: white url(events_menu/stripe_light.gif) repeat top left;
 	  text-transform: uppercase;
+	  text-align: center; /* Added */
 	}
 	h3{
 	  font-family: 'Raleway', arial, serif;
-	  color: #fff;
+	  color: white;
 	  text-shadow: 0px 0px 1px #000;
 	  font-style: normal;
 	  padding: 10px;
 	  background: #333;
 	}
 	p{
-	  color: #000;
+	  color: black;
 	  padding: 10px 5px 0px 5px;
 	  line-height: 18px;
-	  font-size: 11px;
+	  font-size: 12px;
 	  font-family: Arial;
 	  text-transform: uppercase;
+	  text-align: center; /* Added */
   }
 }
