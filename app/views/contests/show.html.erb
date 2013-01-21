@@ -20,9 +20,16 @@
 		
 		<div class="tab-content">
 			<div class="tab-pane active" id="tab1">
-				<p><%= @event.name %><br/>
-					<%= description %>
-				</p>
+			  <div class="row-fluid">
+			    <div class="span8">
+			      <p><%= @event.name %><br/>
+					    <%= description %>
+				    </p>
+			    </div>
+			    <div class="span4">
+			      <%= image_tag "posters/8.jpg", :alt => "Event Poster" %>
+			    </div>
+			  </div>
 			</div>
 			
 			<div class="tab-pane" id="tab2">
@@ -44,7 +51,7 @@
 					<% if @participation.nil? %>
 						No notifications to display.
 					<% else %>
-						<%= current_user.notifications.to_s rescue '' %>
+						<%= current_user.notifications.to_s %>
 					<% end %>
 				</p>
 			</div>
