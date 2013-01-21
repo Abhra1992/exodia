@@ -1,15 +1,15 @@
 class ContestsController < ApplicationController
+  before_filter :list, :only => [:index, :show]
+  
   def list
     @contests = Event.contests
 		@participating = current_user.events rescue []
   end
 
   def index
-    list
   end
 
   def show
-    list
 		if params[:id].nil?
 			@event = Event.find_by_code(params[:code])
 		else

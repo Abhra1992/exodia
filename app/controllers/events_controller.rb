@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_contact!
+  before_filter :venues_and_types, :only => [:new, :edit]
   
   def venues_and_types
     @venues = Venue.all.map { |v| [v.name, v.id] }
@@ -15,7 +16,6 @@ class EventsController < ApplicationController
   end
 
   def new
-    venues_and_types
   end
   
   def create
@@ -30,7 +30,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    venues_and_types
     @event = Event.find(params[:id])
   end
   
