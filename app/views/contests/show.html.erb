@@ -68,7 +68,9 @@
 					<% if @participation.nil? %>
 					  Participate in <%= @event.name %><br/>
 					  <%= link_to 'Participate', contest_register_path(@event), :method => :post, :class => 'btn btn-primary' %><br/>
-					  A confirmation mail of your participation will be sent to your email : <%= current_user.email %>
+					  <% if user_signed_in? %>
+  					  A confirmation mail of your participation will be sent to your email : <%= current_user.email %>
+					  <% end %>
 					<% else %>
 					  <div class="row-fluid">
 					    <div class="span6">
