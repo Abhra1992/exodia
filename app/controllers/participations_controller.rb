@@ -10,10 +10,12 @@ class ParticipationsController < ApplicationController
 	end
 	
 	def create
-	  if current_user.events.push(Event.find(params[:contest_id]))
-  	  flash[:success] = "Successfully registered for event."
-	  else
-	    flash[:error] = "Registration failed. Please try again."
+	  if not params[:contest_id].in? current_user.event_ids
+	    if current_user.events.push(Event.find(params[:contest_id]))
+    	  flash[:success] = "Successfully registered for event."
+	    else
+	      flash[:error] = "Registration failed. Please try again."
+      end
     end
 	  redirect_to :back
 	end
