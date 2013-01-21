@@ -9,10 +9,9 @@
 	      </a>
 	      <div class="ei_descr">
 				  <h2><%= type %></h2>
-				  <h3><%= type %></h3>
 				  <p>
 				  <% contests.each do |c| %>
-						<%= link_to c.name, contest_path(c.code), :class => ('participating' if @participating.include? c) %><br/>
+						<%= link_to c.name, contest_path(c.code), :class => contest_class(c) %><br/>
 					<% end %>
 				  </p>
 			  </div>
