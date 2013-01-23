@@ -39,7 +39,13 @@
 					    <li><%= link_to "Credits", pages_credits_path %></li>
 					    <li><%= link_to "Privacy Policy", pages_privacy_path %></li>
 					    <li><%= link_to "License", pages_license_path %></li>
-					    <li><%= link_to "Contacts Sign In", new_contact_session_path %></li>
+					    <li>
+					    <% if contact_signed_in? %>
+  					    <%= link_to "Contacts Sign out", destroy_contact_session_path, :method => :delete %>
+					    <% else %>
+					      <%= link_to "Contacts Sign In", new_contact_session_path %>
+					    <% end %>
+					    </li>
 					  </ul>
 					</li>
 				</ul>
