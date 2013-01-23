@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'therubyracer', :platforms => :ruby
 gem 'kramdown'
+gem 'mysql2'
 
 group :development do
   gem 'sqlite3'
