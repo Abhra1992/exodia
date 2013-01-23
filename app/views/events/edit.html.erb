@@ -29,17 +29,17 @@
       <%= f.label :rounds %>
       <%= f.text_field :rounds %>  
       
-      <%= f.label :team %>
-      <%= f.check_box :team %>
+      <%= f.label :team_size %>
+      <%= f.text_field :team_size %>
       
       <%= f.label :venue_id %>
       <%= f.select :venue_id, @venues %>
       
       <%= f.label :start %>
-      <%= datetime_select :event, :start, :default => DateTime.civil(2013, 3, 1, 1, 0) %>
+      <%= f.datetime_select :start, :default => DateTime.civil(2013, 3, 1, 1, 0) %>
       
       <%= f.label :end %>
-      <%= datetime_select :event, :end, :default => DateTime.civil(2013, 3, 2, 1, 0) %>
+      <%= f.datetime_select :end, :default => DateTime.civil(2013, 3, 2, 1, 0) %>
       
       <div>
         <%= f.submit "Save and Close", :class => 'btn' %>
