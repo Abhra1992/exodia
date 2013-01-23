@@ -6,7 +6,6 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'devise'
-gem 'therubyracer', :platforms => :ruby
 gem 'kramdown'
 gem 'mysql2'
 
