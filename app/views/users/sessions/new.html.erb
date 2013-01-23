@@ -1,5 +1,5 @@
 <div class="row-fluid">
-  <div class="span12 well overlay">
+  <div id="sign_in" class="span4 offset4 well overlay">
     <h2>Sign in</h2>
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -17,7 +17,7 @@
 
       <div><%= f.submit "Sign in", :class => 'btn' %></div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
+    <hr/>
+    <%= render "users/shared/links" %>
   </div>
 </div>
