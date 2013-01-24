@@ -45,5 +45,12 @@ class EventsController < ApplicationController
   end
   
   def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+	    flash[:success] = "Successfully deleted event."
+	  else
+	    flash[:error] = "Event could not be deleted. Please try again."
+	  end
+	  redirect_to :back
   end
 end

@@ -35,3 +35,10 @@ div.clear{
   background: rgba(0, 0, 0, 0.8);
   color: white;
 }
+table{
+  background: whitesmoke;
+}
+table > caption{
+  color: white;
+  background: black;
+}
