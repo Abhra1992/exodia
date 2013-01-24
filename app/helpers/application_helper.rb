@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def icon(iname, label = '', color = 'black')
-    raw "<i class='icon-#{iname} icon-#{color}'></i> #{label}"
+  def icon(iname, label = '')
+    raw "<i class='icon-#{iname}'></i> #{label}"
   end
 end

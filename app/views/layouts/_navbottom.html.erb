@@ -16,19 +16,19 @@
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="<%= 'active' if params[:action] == 'contacts' %>">
-						<%= link_to "Contact Us", pages_contacts_path %>
+						<%= link_to (icon 'envelope', "Contact Us"), pages_contacts_path %>
 					</li>					
 					<li class="<%= 'active' if params[:action] == 'how_to_reach' %>">
-						<%= link_to "How To Reach", pages_how_to_reach_path %>
+						<%= link_to (icon 'plane', "How To Reach"), pages_how_to_reach_path %>
 					</li>
 					<li class="<%= 'active' if params[:action] == 'hospitality' %>">
-						<%= link_to "Hospitality", pages_hospitality_path %>
+						<%= link_to (icon 'flag', "Hospitality"), pages_hospitality_path %>
 					</li>
 					<li class="<%= 'active' if params[:action] == 'sponsors' %>">
-						<%= link_to "Sponsors", pages_sponsors_path %>
+						<%= link_to (icon 'tags', "Sponsors"), pages_sponsors_path %>
 					</li>
 					<li class="<%= 'active' if params[:action] == 'sitemap' %>">
-						<%= link_to "Sitemap", pages_sitemap_path %>
+						<%= link_to (icon 'globe', "Sitemap"), pages_sitemap_path %>
 					</li>
 				</ul>
 				
