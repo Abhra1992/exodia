@@ -17,10 +17,10 @@
 			<div class="nav-collapse collapse">
 			  <ul class="nav">
 					<li class="<%= 'active' if params[:controller] == 'home' %>">
-						<%= link_to "Home", root_path %>
+						<%= link_to (icon 'home', "Home"), root_path %>
 					</li>
 					<li class="<%= 'active' if params[:controller] == 'contests' %>">
-						<%= link_to "Contests", contests_path %>
+						<%= link_to (icon 'gift', "Contests"), contests_path %>
 					</li>
 					<li class="<%= 'active' if params[:controller] == 'insights' %>">
 						<%= link_to "Special Attractions", insights_path %>
@@ -29,11 +29,11 @@
 					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extras <b class="caret"></b></a>
 					  <ul class="dropdown-menu">
 					    <li><%= link_to "Gallery", "#" %></li>
-					    <li><%= link_to "Archive - 2012", "#" %></li>
+					    <li><%= link_to (icon 'folder-open', "Archive - 2012"), "#" %></li>
 					  </ul>
 					</li>
 					<li class="<%= 'active' if params[:action] == 'schedule' %>">
-						<%= link_to "Schedule", pages_schedule_path %>
+						<%= link_to (icon 'list-alt', "Schedule"), pages_schedule_path %>
 					</li>
 				</ul>
 				
@@ -41,7 +41,7 @@
 					<li class="">
 						<div class="btn-group pull-right">
 							<% if user_signed_in? %>
-								<button class="btn"><%= current_user.username %></button>
+								<button class="btn"><%= icon 'user', current_user.username %></button>
 								<button class="btn dropdown-toggle" data-toggle="dropdown">
 									<span class="caret"></span>
 								</button>
@@ -52,17 +52,17 @@
 									<li><%= link_to t.name, '#' %></li>
 									<% end %>
 									<li class="divider"></li>
-									<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+									<li><%= link_to (icon 'off', "Sign Out"), destroy_user_session_path, :method => :delete %></li>
 								</ul>
 							<% else %>
-								<button class="btn">My Exodia</button>
+								<button class="btn"><%= icon 'star' %>My Exodia</button>
 								<button class="btn dropdown-toggle" data-toggle="dropdown">
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
-									<li><%= link_to "Sign In", new_user_session_path %></li>
+									<li><%= link_to (icon 'pencil', "Sign In"), new_user_session_path %></li>
 									<li class="divider"></li>
-									<li><%= link_to "Sign Up", new_user_registration_path %></li>
+									<li><%= link_to (icon 'plus', "Sign Up"), new_user_registration_path %></li>
 								</ul>
 							<% end %>
 						</div><!-- /btn-group -->

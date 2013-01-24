@@ -18,7 +18,7 @@
 			<% if user_signed_in? %>
 			<div class="tab-pane" id="profile">
 				<div class="row-fluid">
-				  <table class="table table-bordered">
+				  <table class="table table-bordered table-condensed">
 				    <caption>Your Profile</caption>
 				    <thead></thead>
 				    <tbody>
@@ -46,7 +46,7 @@
 				  </table>
 				</div>
 				<div class="row-fluid">
-				  <%= link_to "Edit Profile", edit_user_registration_path, :class => 'btn btn-action' %>
+				  <%= link_to (icon 'edit', "Edit Profile"), edit_user_registration_path, :class => 'btn btn-action' %>
 				</div>
 			</div>
 			<div class="tab-pane" id="notifications">

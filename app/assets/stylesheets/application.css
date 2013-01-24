@@ -25,6 +25,14 @@ a:hover{
 div.clear{
 	margin: 15px 0;
 }
+table{
+  background: whitesmoke;
+  color: black;
+}
+table > caption{
+  color: white;
+  background: black;
+}
 .hidden{
 	display: none;
 }
@@ -34,11 +42,4 @@ div.clear{
 .overlay{
   background: rgba(0, 0, 0, 0.8);
   color: white;
-}
-table{
-  background: whitesmoke;
-}
-table > caption{
-  color: white;
-  background: black;
 }
