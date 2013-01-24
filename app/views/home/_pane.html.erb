@@ -17,7 +17,37 @@
 			</div>
 			<% if user_signed_in? %>
 			<div class="tab-pane" id="profile">
-				<p>Your Profile.</p>
+				<div class="row-fluid">
+				  <table class="table table-bordered">
+				    <caption>Your Profile</caption>
+				    <thead></thead>
+				    <tbody>
+				      <tr>
+				        <td>Name</td>
+				        <td><%= current_user.name %></td>
+				      </tr>
+				      <tr>
+				        <td>School</td>
+				        <td><%= current_user.school %></td>
+				      </tr>
+				      <tr>
+				        <td>Birth Date</td>
+				        <td><%= current_user.birthdate %></td>
+				      </tr>
+				      <tr>
+				        <td>Phone</td>
+				        <td><%= current_user.phone %></td>
+				      </tr>
+				      <tr>
+				        <td>Email</td>
+				        <td><%= current_user.email %></td>
+				      </tr>
+				    </tbody>
+				  </table>
+				</div>
+				<div class="row-fluid">
+				  <%= link_to "Edit Profile", edit_user_registration_path, :class => 'btn btn-action' %>
+				</div>
 			</div>
 			<div class="tab-pane" id="notifications">
 				<p>
