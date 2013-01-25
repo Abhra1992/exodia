@@ -43,6 +43,9 @@ table > caption{
   background: rgba(0, 0, 0, 0.8);
   color: white;
 }
-.navbar-inverse .nav > li > a > [class^="icon-"], .navbar-inverse .nav > li > a > [class*=" icon-"]{
+.navbar-inverse .nav > li > a > [class^="icon-"],
+.navbar-inverse .nav > li > a > [class*=" icon-"],
+.overlay [class^="icon-"],
+.overlay [class*=" icon-"]{
   background-image: url("glyphicons-halflings-white.png");
 }
