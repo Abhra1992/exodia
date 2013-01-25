@@ -8,18 +8,18 @@ class EventsController < ApplicationController
   end  
   
   def index
-    @events = Event.all
+    @events = current_contact.events
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = current_contact.events.find(params[:id])
   end
 
   def new
   end
   
   def create
-    @event = Event.new(params[:event])
+    @event = current_contact.events.new(params[:event])
     if @event.save
       flash[:success] = "The event was successfully created"
       redirect_to events_path
@@ -30,11 +30,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_contact.events.find(params[:id])
   end
   
   def update
-    @event = Event.find(params[:id])
+    @event = current_contact.events.find(params[:id])
     if @event.update_attributes(params[:event])
       flash[:success] = "The event changes were successfully saved"
       redirect_to event_path(@event)
@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    @event = Event.find(params[:id])
+    @event = current_contact.events.find(params[:id])
     if @event.destroy
 	    flash[:success] = "Successfully deleted event."
 	  else
