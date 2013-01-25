@@ -1,25 +1,29 @@
 class EventsController < ApplicationController
   before_filter :authenticate_contact!
   before_filter :venues_and_types, :only => [:new, :edit]
+  before_filter :restrict_events
   
   def venues_and_types
     @venues = Venue.all.map { |v| [v.name, v.id] }
     @types = EventType.all.map { |t| [t.name, t.id] }
-  end  
+  end
+  
+  def restrict_events
+    @events = current_contact.events
+  end
   
   def index
-    @events = current_contact.events
   end
 
   def show
-    @event = current_contact.events.find(params[:id])
+    @event = @events.find(params[:id])
   end
 
   def new
   end
   
   def create
-    @event = current_contact.events.new(params[:event])
+    @event = @events.new(params[:event])
     if @event.save
       flash[:success] = "The event was successfully created"
       redirect_to events_path
@@ -30,11 +34,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = current_contact.events.find(params[:id])
+    @event = @events.find(params[:id])
   end
   
   def update
-    @event = current_contact.events.find(params[:id])
+    @event = @events.find(params[:id])
     if @event.update_attributes(params[:event])
       flash[:success] = "The event changes were successfully saved"
       redirect_to event_path(@event)
@@ -45,7 +49,7 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    @event = current_contact.events.find(params[:id])
+    @event = @events.find(params[:id])
     if @event.destroy
 	    flash[:success] = "Successfully deleted event."
 	  else
