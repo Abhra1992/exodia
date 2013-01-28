@@ -16,3 +16,4 @@
 /log/*.log
 /tmp
 /vendor/cache
+/config/application.yml

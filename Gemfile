@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'kramdown'
 gem 'mysql2'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'

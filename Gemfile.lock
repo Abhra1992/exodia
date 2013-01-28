@@ -48,6 +48,8 @@ GEM
       multi_json (~> 1.0)
     faker (1.1.2)
       i18n (~> 0.5)
+    figaro (0.5.3)
+      rails (~> 3.0)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -124,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   faker
+  figaro
   jquery-rails
   kramdown
   mysql2
